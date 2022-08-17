@@ -4,9 +4,9 @@
   <!-- all options are commented out in standard install - meaning use default values -->
   <!-- see https://www.unidata.ucar.edu/software/thredds/current/tds/reference/ThreddsConfigXMLFile.html -->
   <serverInformation>
-    <name>IMOS Thredds Server</name>
+    <name>IMOS THREDDS Server</name>
     <logoUrl>/thredds/threddsIcon.png</logoUrl>
-    <logoAltText>IMOS Thredds Server</logoAltText>
+    <logoAltText>IMOS THREDDS Server</logoAltText>
 
     <abstract>Integrated national array of observing equipment to monitor physical, chemical and biological variables open oceans and coastal marine environment around Australia</abstract>
     <keywords>multi-decadal ocean change climate variability weather extremes major boundary currents interbasin flows continental shelf processes ecosystem responses</keywords>
@@ -19,7 +19,7 @@
     </contact>
     <hostInstitution>
       <name>IMOS</name>
-      <webSite>http://imos.org.au/</webSite>
+      <webSite>https://imos.org.au/</webSite>
       <logoUrl>myGroup.gif</logoUrl>
       <logoAltText>IMOS</logoAltText>
     </hostInstitution>

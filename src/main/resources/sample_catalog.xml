@@ -7,9 +7,9 @@
            https://schemas.unidata.ucar.edu/thredds/InvCatalog.1.0.6.xsd">
 
   <service name="regGriddedServices" base="" serviceType="compound">
-    <service name="odap" serviceType="OpenDAP" base="/thredds_0_0_0/dodsC/"/>
-    <service name="http" serviceType="HTTPServer" base="/thredds_0_0_0/fileServer/"/>
-    <service name="wms" serviceType="WMS" base="/thredds_0_0_0/wms/"/>
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
     <!--
     <service name="dap4" serviceType="DAP4" base="/thredds/dap4/"/>
     <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
@@ -29,7 +29,7 @@
     datasetscan not supporting S3, https://www.unidata.ucar.edu/mailing_lists/archives/thredds/2020/msg00025.html
     cannot use cdms3 prefix due to bug inside, we need to use s3 protocol at the moment.
   -->
-  <datasetRoot path="s3" location="cdms3://nonproduction-developer@s3.ap-southeast-2.amazonaws.com/imos-data-wsd"/>
+  <datasetRoot path="s3" location="cdms3://s3.ap-southeast-2.amazonaws.com/imos-data"/>
   <dataset name="IMOS" ID="root-path" urlPath="s3/IMOS/AATAMS/satellite_tagging/MEOP_QC_CTD/awru1/awru1-A-06_prof.nc">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>

@@ -18,11 +18,9 @@ Create a run config with the following info
 New a Tomcat 8 config, must use Tomcat 8. Then add the below parameters
 
 VM options:
--Dtds.content.root.path=/tmp 
--Daws.accessKeyId=YOUR AWS ACCESS ID 
--Daws.secretAccessKey=YOUR AWS ACCESS KEY
+-Dtds.content.root.path=/tmp -Daws.region=ap-southeast-2 -Daws.accessKeyId=YOUR AWS ACCESS ID -Daws.secretAccessKey=YOUR AWS ACCESS KEY
 
-URL : http://localhost:8080/thredds_0_0_0/
+URL : http://localhost:8080/thredds/
 
 ## Internal logic
 

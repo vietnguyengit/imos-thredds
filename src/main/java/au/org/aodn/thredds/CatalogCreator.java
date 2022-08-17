@@ -25,9 +25,6 @@ public class CatalogCreator {
 
     private S3Client s3;
 
-    // @Value("${aodn.s3.impersonate:nonproduction-developer}")
-    // private String impersonate;
-
     @Value("${aodn.s3.host:s3.ap-southeast-2.amazonaws.com}")
     private String host;
 
@@ -201,7 +198,7 @@ public class CatalogCreator {
         regGriddedServices.setBase("");
         regGriddedServices.setServiceType("compound");
 
-        // Register service section here, it include the serice that is going
+        // Register service section here, it includes the service that is going
         // to expose to user for the nc files.
         Service odap = catalogObjectFactory.createService();
         odap.setName("odap");
