@@ -25,8 +25,8 @@ public class CatalogCreator {
 
     private S3Client s3;
 
-    @Value("${aodn.s3.impersonate:nonproduction-developer}")
-    private String impersonate;
+    // @Value("${aodn.s3.impersonate:nonproduction-developer}")
+    // private String impersonate;
 
     @Value("${aodn.s3.host:s3.ap-southeast-2.amazonaws.com}")
     private String host;
@@ -59,7 +59,12 @@ public class CatalogCreator {
         marshaller = jaxbContext.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        s3 = CdmS3Client.acquire(String.format("cdms3://%s@%s/%s", impersonate, host, bucket));
+        /*
+        * using a dedicated IAM role with a limited S3 access
+        * AWS least privileges concept
+        * */
+        // s3 = CdmS3Client.acquire(String.format("cdms3://%s@%s/%s", impersonate, host, bucket));
+        s3 = CdmS3Client.acquire(String.format("cdms3://%s/%s", host, bucket));
 
         dateTimeFormatter = DateTimeFormatter.ofPattern(timeFormat).withZone(ZoneId.of(zoneId));
 
@@ -128,7 +133,6 @@ public class CatalogCreator {
                 ds.getDataset().add(dst);
             }
         }
-        // convert java obj to xml
         marshaller.marshal(root, new File(String.format("%s/thredds/%s.xml", rootPath, current == null ? "catalog" : current)));
     }
 
@@ -202,26 +206,31 @@ public class CatalogCreator {
         Service odap = catalogObjectFactory.createService();
         odap.setName("odap");
         odap.setServiceType("OpenDAP");
-        odap.setBase("/thredds_0_0_0/dodsC/");
+        odap.setBase("/thredds/dodsC/");
         regGriddedServices.getService().add(odap);
 
         Service http = catalogObjectFactory.createService();
         http.setName("http");
         http.setServiceType("HTTPServer");
-        http.setBase("/thredds_0_0_0/fileServer/");
+        http.setBase("/thredds/fileServer/");
         regGriddedServices.getService().add(http);
 
         Service wms =  catalogObjectFactory.createService();
         wms.setName("wms");
         wms.setServiceType("WMS");
-        wms.setBase("/thredds_0_0_0/wms/");
+        wms.setBase("/thredds/wms/");
         regGriddedServices.getService().add(wms);
 
         // Setup the s3 bucket root folder so that all path that starts with "s3" will
         // be called remotely instead of scanning local file folder
         DatasetRoot datasetRoot = catalogObjectFactory.createDatasetRoot();
         datasetRoot.setPath("s3");
-        datasetRoot.setLocation(String.format("cdms3://%s@%s/%s", impersonate, host, bucket));
+        /*
+         * using a dedicated IAM role with a limited S3 access
+         * AWS least privileges concept
+         * */
+        // datasetRoot.setLocation(String.format("cdms3://%s@%s/%s", impersonate, host, bucket));
+        datasetRoot.setLocation(String.format("cdms3://%s/%s", host, bucket));
 
         // Here goes the root <catalog>
         Catalog root = catalogObjectFactory.createCatalog();

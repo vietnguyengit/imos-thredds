@@ -147,7 +147,9 @@
         -->
     </dependencies>
 
+    <packaging>war</packaging>
     <build>
+        <finalName>${project.artifactId}##${tds.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
