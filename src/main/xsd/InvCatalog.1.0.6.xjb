@@ -1,0 +1,34 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          version="2.1">
+    <bindings schemaLocation="InvCatalog.1.0.6.xsd" version="1.0">
+        <!-- Customise the package name -->
+        <schemaBindings>
+            <package name="au.org.aodn.thredds.xml.catalog"/>
+        </schemaBindings>
+
+        <!-- rename the value element -->
+        <bindings node="//xsd:element[@name='datasetScan']/xsd:complexType/xsd:complexContent/xsd:extension/xsd:attribute[@name='filter']">
+            <property name="filterAttribute"/>
+        </bindings>
+        <bindings node="//xsd:element[@name='datasetScan']/xsd:complexType/xsd:complexContent/xsd:extension/xsd:attribute[@name='addLatest']">
+            <property name="addLatestAttribute"/>
+        </bindings>
+        <bindings node="//xsd:element[@name='datasetScan']/xsd:complexType/xsd:complexContent/xsd:extension/xsd:attribute[@name='addDatasetSize']">
+            <property name="addDatasetSizeAttribute"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='documentationType']/xsd:attribute[@name='type']">
+            <property name="typeAttribute"/>
+        </bindings>
+    </bindings>
+    <bindings schemaLocation="https://schemas.unidata.ucar.edu/netcdf/ncml-2.2.xsd" version="1.0">
+        <!-- Customise the package name -->
+        <schemaBindings>
+            <package name="au.org.aodn.thredds.xml.ncml"/>
+        </schemaBindings>
+        <bindings node="//xsd:element[@name='netcdf']/xsd:complexType/xsd:attribute[@name='iospParam']">
+            <property name="iospParameter"/>
+        </bindings>
+    </bindings>
+</bindings>

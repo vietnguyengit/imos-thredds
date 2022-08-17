@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="Unidata THREDDS Data Server"
+         version="1.0.2">
+    <service name="regGriddedServices" serviceType="Compound" base="">
+        <service name="dapService" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+        <service name="httpService" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+        <service name="wmsService" serviceType="WMS" base="/thredds/wms/"/>
+    </service>
+    <datasetScan name="Bureau_of_Meteorology" ID="Bureau_of_Meteorology" path="Bureau_of_Meteorology" location="s3://imos-data/Bureau_of_Meteorology">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="CSIRO" ID="CSIRO" path="CSIRO" location="s3://imos-data/CSIRO">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Deakin_University" ID="Deakin_University" path="Deakin_University" location="s3://imos-data/Deakin_University">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+            <exclude wildcard="Victorian-coast_Bathy_10m.nc"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Defence_Technology_Agency-New_Zealand" ID="Defence_Technology_Agency-New_Zealand" path="Defence_Technology_Agency-New_Zealand" location="s3://imos-data/Defence_Technology_Agency-New_Zealand">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Department_of_Defence" ID="Department_of_Defence" path="Department_of_Defence" location="s3://imos-data/Department_of_Defence">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+            <include wildcard="*.txt"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Department_of_Environment_and_Science-Queensland" ID="Department_of_Environment_and_Science-Queensland" path="Department_of_Environment_and_Science-Queensland" location="s3://imos-data/Department_of_Environment_and_Science-Queensland">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Department_of_Transport-Western_Australia" ID="Department_of_Transport-Western_Australia" path="Department_of_Transport-Western_Australia" location="s3://imos-data/Department_of_Transport-Western_Australia">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Derwent_Estuary_Program" ID="Derwent_Estuary_Program" path="Derwent_Estuary_Program" location="s3://imos-data/Derwent_Estuary_Program">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="Future_Reef_MAP" ID="Future_Reef_MAP" path="Future_Reef_MAP" location="s3://imos-data/Future_Reef_MAP">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="IMOS" ID="IMOS" path="IMOS" location="s3://imos-data/IMOS">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="NSW-OEH" ID="NSW-OEH" path="NSW-OEH" location="s3://imos-data/NSW-OEH">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+            <exclude wildcard="Multi-beam" atomic="false" collection="true"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="UNSW" ID="UNSW" path="UNSW" location="s3://imos-data/UNSW">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+    <datasetScan name="UWA" ID="UWA" path="UWA" location="s3://imos-data/UWA">
+        <metadata inherited="true">
+            <serviceName>regGriddedServices</serviceName>
+            <dataType>Grid</dataType>
+        </metadata>
+        <filter>
+            <include wildcard="*.nc"/>
+            <include wildcard="*.nc.gz"/>
+            <include wildcard="*.ncml"/>
+        </filter>
+        <sort>
+            <lexigraphicByName increasing="true" />
+        </sort>
+        <crawlableDatasetImpl className="thredds.crawlabledataset.s3.CrawlableDatasetAmazonS3"/>
+    </datasetScan>
+</catalog>

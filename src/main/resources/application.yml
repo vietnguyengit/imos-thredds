@@ -1,0 +1,5 @@
+aodn:
+  s3:
+    impersonate: nonproduction-developer
+    host: s3.ap-southeast-2.amazonaws.com
+    bucket: imos-data-wsd
