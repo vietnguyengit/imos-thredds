@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog name="IMOS THREDDS Server Catalog"
          xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0
-           https://schemas.unidata.ucar.edu/thredds/InvCatalog.1.0.6.xsd">
+         xmlns:ncml="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" version="1.2">
 
   <service name="regGriddedServices" base="" serviceType="compound">
     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
@@ -25,7 +22,14 @@
   <catalogRef xlink:title="Test Enhanced Catalog" xlink:href="enhancedCatalog.xml" name=""/>
   -->
 
-  <datasetRoot path="s3" location="cdms3:s3.ap-southeast-2.amazonaws.com/imos-data-wsd"/>
-  <dataset name="IMOS" ID="root-path" urlPath="s3/IMOS/AATAMS/satellite_tagging/MEOP_QC_CTD/awru1/awru1-A-06_prof.nc"
-           serviceName="regGriddedServices" dataType="Grid"/>
+  <datasetRoot path="s3" location="cdms3:imos-data-wsd"/>
+  <dataset name="IMOS" ID="root-path" urlPath="s3/IMOS/AATAMS/satellite_tagging/MEOP_QC_CTD/awru1/awru1-A-06_prof.nc"/>
+
+  <scan name="Test all files in a directory" ID="testDatasetScan"
+               path="awru1" location="cdms3:imos-data-wsd/IMOS/AATAMS/satellite_tagging/MEOP_QC_CTD/awru1/">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+    </metadata>
+  </scan>
+
 </catalog>

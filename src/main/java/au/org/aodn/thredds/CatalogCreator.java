@@ -28,7 +28,7 @@ public class CatalogCreator {
     @Value("${aodn.s3.host:s3.ap-southeast-2.amazonaws.com}")
     private String host;
 
-    @Value("${aodn.s3.bucket:imos-data-wsd}")
+    @Value("${aodn.s3.bucket:imos-data-minimal}")
     private String bucket;
 
     @Value("${aodn.zoneId:UTC}")

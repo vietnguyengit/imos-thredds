@@ -13,3 +13,6 @@ buildNumber.properties
 
 #Jetbrains
 .idea
+
+content
+out
